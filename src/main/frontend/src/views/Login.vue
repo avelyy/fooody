@@ -11,7 +11,7 @@ export default defineComponent({
   name: "Login",  // name of the component
   props: {},  // props of the component
   emits: ['login'],  // emits of the component
-  setup(props, { emit }) {
+  setup() {
     const login = () => {
       alert("Login!!");
       router.push("/");
