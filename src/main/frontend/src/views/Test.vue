@@ -1,11 +1,9 @@
 <template>
-  Test
+  This is Login Page
 </template>
 
-<script>
-export default {
-  name: "Test.vue"
-}
+<script setup lang="ts">
+
 </script>
 
 <style scoped>
