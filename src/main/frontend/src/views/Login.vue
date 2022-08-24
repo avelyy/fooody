@@ -1,29 +1,28 @@
-<template>
-  This is Login Page
-  <button @click="login">Login</button>
-</template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import router from "../router/router";
+import {reactive} from "vue";
 
-export default defineComponent({
-  name: "Login",  // name of the component
-  props: {},  // props of the component
-  emits: ['login'],  // emits of the component
-  setup() {
-    const login = () => {
-      alert("Login!!");
-      router.push("/");
-    };
-    return {
-      login
-    };
-  }
+const data = reactive({
+  username: '',
+  password: ''
 });
 
+const Login = () => {
+  router.push("/home");
+}
 </script>
 
-<style scoped>
-
-</style>
+<template>
+  <h3 class="display-3" style="color: #2042a7">Fooody World</h3>
+  <va-form class="mt-3">
+    <div>
+      <va-input label="Username" v-model="data.username" />
+    </div>
+    <div class="mt-2">
+      <va-input type="password" label="Password" v-model="data.password" />
+    </div>
+    <div>
+      <va-button type="submit" class="mt-3" @click="Login"> Login</va-button>
+    </div>
+  </va-form>
+</template>
